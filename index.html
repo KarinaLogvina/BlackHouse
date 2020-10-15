@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -16,11 +16,14 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <div class="wrapper header-wrapper">
+            <div class="header-wrapper">
                 <div class="logo">
                     <img src="./src/img/logo.png" alt="logo">
                 </div>
-                <nav>
+                <nav class="burger">
+                    <a href="#" class="burger-button" id="burger-button">
+                        <span class="burger-icon"></span>
+                    </a>
                     <ul class="navigation">
                         <li class="navigation-item"><a href="https://blackhouseclub.by/">ГЛАВНАЯ</a></li>
                         <li class="navigation-item"><a href="https://blackhouseclub.by/about/">О НАС</a></li>
@@ -46,7 +49,7 @@
             </div>
         </header>
         <main>
-            <div class="main-wrapper wrapper">
+            <div class="main-wrapper">
                 <div class="photos">
                     <img class="photo photo1" src="./src/img/main1.jpg" alt="main1">
                     <img class="photo photo2" src="./src/img/main2.jpg" alt="main2">
@@ -108,10 +111,12 @@
                     </div>
                     <div>
                         <div class="location">
-                            <iframe class="map"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.0828484122803!2d27.56760211546233!3d53.91250368010163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfbd7cb76fad%3A0x6150fb0d9321ca2!2sBlack%20House%20Club!5e0!3m2!1sru!2sby!4v1602566103144!5m2!1sru!2sby"
-                                frameborder="0" width="800px" height="450" style="border:0;" allowfullscreen=""
-                                aria-hidden="false" tabindex="0"></iframe>
+                            <div class="map">
+                                <iframe class="maap"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.0828484122803!2d27.56760211546233!3d53.91250368010163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfbd7cb76fad%3A0x6150fb0d9321ca2!2sBlack%20House%20Club!5e0!3m2!1sru!2sby!4v1602566103144!5m2!1sru!2sby"
+                                    frameborder="0" width="600" height="450" style="border:0;" allowfullscreen=""
+                                    aria-hidden="false" tabindex="0"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
