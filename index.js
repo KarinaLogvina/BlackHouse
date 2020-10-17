@@ -6,10 +6,22 @@ up.onclick = function() {
     up.hidden = (pageYOffset < document.documentElement.clientHeight);
 });
 
-let burger = document.getElementById("burger-button");
 
-burger.addEventListener("click", (e) => {
-  e.preventDefault();
-  document.body.classList.toggle("open");
-  burger.classList.toggle("open");
-});
+var slideIndex = 0;
+showSlides();
+  
+function showSlides() {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+
+    if (slideIndex > slides.length) { 
+      slideIndex = 1;
+    }
+
+   slides[slideIndex-1].style.display = "block";
+   setTimeout(showSlides, 5000);
+}
