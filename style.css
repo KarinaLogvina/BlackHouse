@@ -28,6 +28,11 @@ a {
     color: #fff;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+}
+
 .header-wrapper {
     margin: 30px auto;
     display: flex;
@@ -92,6 +97,8 @@ nav {
 
 .photo {
     width: 100%;
+    height: 100%;
+    overflow-wrap: initial;
 }
 
 .about {
@@ -126,9 +133,10 @@ nav {
 
 .contact-us {
     display: flex;
-    justify-content: center;
     margin: 2%;
 }
+
+
 
 .working-hours {
     width: 33.3%;
@@ -194,17 +202,15 @@ nav {
     display: none;
 }
 
+.slide {
+    height: 100%;
+    width: 100%;
+}
+
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 3s;
     animation-name: fade;
-    animation-duration: 3s;
-  }
-  
-  .shy {
-    -webkit-animation-name: shy;
-    -webkit-animation-duration: 3s;
-    animation-name: shy;
     animation-duration: 3s;
   }
 
@@ -216,11 +222,6 @@ nav {
   @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
-  }
-
-  @keyframes shy {
-      from {opacity: 1;}
-        to {opacity: 0.4}
   }
 
 @media screen and (max-width: 850px) {
