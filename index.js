@@ -33,22 +33,6 @@ if (about) {about.onclick = () => {
 }
 }
 
-
-const booking = document.getElementById('booking');
-const modalWrapper = document.getElementsByClassName('modal');
-const closeButton = document.getElementById('close');
-
-booking.onclick = () => {
-    modalWrapper[0].style.display = 'flex';
-    document.getElementsByTagName('main')[0].classList.add('filter');
-}
-
-closeButton.onclick = () => {
-    modalWrapper[0].style.display = 'none';
-    document.getElementsByTagName('main')[0].classList.remove('filter');
-
-}
-
 (function() {
 
     var hamburger = {
@@ -66,3 +50,48 @@ closeButton.onclick = () => {
     hamburger.nav.addEventListener('click', function(e) { hamburger.doToggle(e); });
   
   }());
+
+  const bookingForm = document.getElementsByClassName('booking-form');
+  const subminButton = document.getElementsByClassName('send-button');
+  const warning = document.getElementsByClassName('warning');
+  const name = document.getElementById('name');
+  const date = document.getElementById('date');
+  const phone = document.getElementById('phone');
+
+  (function order() {
+    bookingForm[0].addEventListener('submit', (e) => {
+        if(name.value.length <= 0) {
+            warning[0].style.visibility= 'visible';
+            e.preventDefault();
+        } else {
+            warning[0].style.visibility= 'hidden';
+        }
+        if(phone.value.length <= 0) {
+            warning[1].style.visibility = 'visible';
+            e.preventDefault();
+        } else {
+            warning[1].style.visibility= 'hidden';
+        }
+        if(date.value.length <= 0) {
+            warning[2].style.visibility = 'visible';
+            e.preventDefault();
+        } else {
+            warning[2].style.visibility= 'hidden';
+        }
+    })
+}());
+
+const booking = document.getElementById('booking');
+const modalWrapper = document.getElementsByClassName('modal');
+const closeButton = document.getElementById('close');
+
+booking.onclick = () => {
+    modalWrapper[0].style.display = 'flex';
+    document.getElementsByTagName('main')[0].classList.add('filter');
+}
+
+closeButton.onclick = () => {
+    modalWrapper[0].style.display = 'none';
+    document.getElementsByTagName('main')[0].classList.remove('filter');
+    bookingForm[0].reset();
+}
