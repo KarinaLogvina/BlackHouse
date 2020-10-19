@@ -47,7 +47,30 @@
                     </div>
                 </nav>
                 <div class="booking">
-                    <button class="button booking-button">ЗАБРОНИРОВАТЬ</button>
+                    <button id="booking" class="button btn booking-button">ЗАБРОНИРОВАТЬ</button>
+                </div>
+                <div class="modal">
+                    <button id="close" class="close-button">&times;</button>
+                    <form action="" method="post">
+                        <p class="title">Закажите столик</p>
+                        <input type="text" placeholder="Имя">
+                        <input type="tel" name="phone" id="phone" placeholder="Телефон">
+                        <p>Дата</p>
+                        <input type="date" name="date" id="date">
+                        <p>Количество персон</p>
+                        <select name="" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                        <button class="button" type="submit">Отправить</button>
+                    </form>
+
                 </div>
             </div>
         </header>

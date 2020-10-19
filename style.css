@@ -91,6 +91,81 @@ nav {
     border-color: grey;
 }
 
+.modal {
+    width: 300px;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    align-content: center;
+    align-items: center;
+    background: #000;
+    z-index: 999;
+    transition: all 0.5s ease-in-out;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-family: "Didact Gothic",'Segoe UI', 'Helvetica Neue',sans-serif;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    padding: 0px;
+    width: 100%;
+    border: none;
+    text-indent: 10px;
+    font-size: inherit;
+    color: inherit;
+    font: inherit;
+    line-height: 20px;
+    height: 41px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background: #000000;
+    border: 1px solid #ffffff!important;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.close-button {
+    background-color: #000;
+    color: #fff;
+    border: 0;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+}
+
+.send-button {
+    margin: 20px 0;
+}
+.warning {
+    color: red;
+    font-family: "Didact Gothic",'Segoe UI', 'Helvetica Neue',sans-serif;
+    margin-top: 0;
+    margin-bottom: 10px;
+    visibility: hidden;
+}
+
+.filter {
+    filter: blur(4px);
+}
+
 .main-wrapper {
     max-width: 1200px;
 }
@@ -368,4 +443,15 @@ nav {
         {
             transform: none;
         }
+
+    .modal {
+        width: 105%;
+        left: 0;
+        top: 0;
+    }
+
+    .map {
+        width: calc(100% - 70px);
+        margin: 0 0;
+    }
 }
