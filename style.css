@@ -314,10 +314,6 @@ input, select {
         align-items: center;
     }
 
-    .navigation {
-        flex-direction: column;
-    }
-
     .booking-button {
         margin: 50px 0;
     }
@@ -327,122 +323,96 @@ input, select {
         align-items: center;
     }
 
-    #menuToggle {
-        display: block;
-        position: absolute;
-        top: 50px;
-        left: 50px;
-        
+    .navigation {
+        -webkit-transition: left 0.5s ease;
+        -moz-transition: left 0.5s ease;
+        -ms-transition: left 0.5s ease;
+        -o-transition: left 0.5s ease;
+        transition: left 0.5s ease;
+        background: #000;
+        color: white;
+        cursor: pointer;
+        font-size: 2rem;
+        height: 100vh;
+        left: -33rem;
+        padding: 6rem 2rem 2rem 2rem;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        flex-direction: column;
         z-index: 1;
-        
+        margin: 0 0 0 0;
+      }
+      
+      .navigation.expanded { left: 0; }
+      
+      .navigation ul {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-toggle {
         -webkit-user-select: none;
+        -moz-user-select: none;
         user-select: none;
-    }
-
-    #menuToggle li {
-        text-decoration: none;
-        color: #ffffff;
-        
-        transition: color 0.3s ease;
-    }
-
-    #menuToggle li:hover {
-        color: tomato;
-    }
-
-
-    #menuToggle input
-        {
-            display: block;
-            width: 40px;
-            height: 32px;
-            position: absolute;
-            top: -7px;
-            left: -5px;
-            
-            cursor: pointer;
-            
-            opacity: 0; /* hide this */
-            z-index: 2; /* and place it over the hamburger */
-            
-            -webkit-touch-callout: none;
-        }
-
-    #menuToggle span
-        {
-            display: block;
-            width: 33px;
-            height: 4px;
-            margin-bottom: 5px;
-            position: relative;
-            
-            background: #ffffff;
-            border-radius: 3px;
-            
-            z-index: 1;
-            
-            transform-origin: 4px 0px;
-            
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                        opacity 0.55s ease;
-        }
-
-    #menuToggle span:first-child
-        {
-            transform-origin: 0% 0%;
-        }
-
-    #menuToggle span:nth-last-child(2)
-        {
-            transform-origin: 0% 100%;
-        }
-
-    #menuToggle input:checked ~ span
-        {
-            opacity: 1;
-            transform: rotate(45deg) translate(-2px, -1px);
-            background: #ffffff;
-        }
-
-    #menuToggle input:checked ~ span:nth-last-child(3)
-        {
-            opacity: 0;
-            transform: rotate(0deg) scale(0.2, 0.2);
-        }
-
-    #menuToggle input:checked ~ span:nth-last-child(2)
-        {
-            transform: rotate(-45deg) translate(0, -1px);
-        }
-
-    #menu
-        {
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            margin: -100px 0 0 -50px;
-            padding: 50px;
-            padding-top: 125px;
-            
-            background: #000000;
-            list-style-type: none;
-            -webkit-font-smoothing: antialiased;  
-            transform-origin: 0% 0%;
-            transform: translate(-100%, 0);
-            
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-        }
-
-    #menu a {
-        padding: 10px 0;
-        font-size: 22px;
-    }
-
-    #menuToggle input:checked ~ ul
-        {
-            transform: none;
-        }
+        cursor: pointer;
+        height: 2rem;
+        left: 2rem;
+        position: fixed;
+        top: 2rem;
+        width: 3.6rem;
+        z-index: 2;
+      }
+      
+      .nav-toggle:hover { opacity: 0.8; }
+      
+      .nav-toggle .nav-toggle-bar,  .nav-toggle .nav-toggle-bar::after,  .nav-toggle .nav-toggle-bar::before {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        background: white;
+        content: '';
+        height: 0.4rem;
+        width: 100%;
+      }
+      
+      .nav-toggle .nav-toggle-bar { margin-top: 0; }
+      
+      .nav-toggle .nav-toggle-bar::after { margin-top: 0.8rem; }
+      
+      .nav-toggle .nav-toggle-bar::before { margin-top: -0.8rem; }
+      
+      .nav-toggle.expanded .nav-toggle-bar { background: transparent; }
+      
+      .nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
+        background: white;
+        margin-top: 0;
+      }
+      
+      .nav-toggle.expanded .nav-toggle-bar::after {
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      
+      .nav-toggle.expanded .nav-toggle-bar::before {
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
 
     .modal {
         width: 105%;
