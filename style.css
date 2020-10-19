@@ -334,7 +334,7 @@ input, select {
         cursor: pointer;
         font-size: 2rem;
         height: 100vh;
-        left: -33rem;
+        left: -105%;
         padding: 6rem 2rem 2rem 2rem;
         position: fixed;
         top: 0;
@@ -362,11 +362,11 @@ input, select {
         -moz-user-select: none;
         user-select: none;
         cursor: pointer;
-        height: 2rem;
+        height: 1rem;
         left: 2rem;
         position: fixed;
         top: 2rem;
-        width: 3.6rem;
+        width: 3rem;
         z-index: 2;
       }
       
