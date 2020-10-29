@@ -16,17 +16,16 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <div class="wrapper header-wrapper">
+            <div class="header-wrapper">
                 <div class="logo">
                     <img src="./src/img/logo.png" alt="logo">
                 </div>
-                <nav role="navigation">
-                    <div id="menuToggle">
-                        <input class="burger" type="checkbox"></input>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <ul class="navigation" id="menu">
+                <div id="menuToggle">
+                    <div class="nav-toggle">
+                        <div class="nav-toggle-bar"></div>
+                    </div>
+                    <nav>
+                        <ul class="navigation nav" id="menu">
                             <li class="navigation-item"><a href="https://blackhouseclub.by/">ГЛАВНАЯ</a></li>
                             <li class="navigation-item"><a href="https://blackhouseclub.by/about/">О НАС</a></li>
                             <li class="navigation-item"><a href="https://blackhouseclub.by/contact/">КОНТАКТЫ</a></li>
@@ -44,19 +43,22 @@
                                 EN
                             </li>
                         </ul>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
                 <div class="booking">
                     <button id="booking" class="button btn booking-button">ЗАБРОНИРОВАТЬ</button>
                 </div>
                 <div class="modal">
                     <button id="close" class="close-button">&times;</button>
-                    <form action="" method="post">
+                    <form class="booking-form" action="" method="post" target="_blank" id="form">
                         <p class="title">Закажите столик</p>
-                        <input type="text" placeholder="Имя">
+                        <input type="text" placeholder="Имя" id="name">
+                        <p class="warning">Поле обязательное для заполнения</p>
                         <input type="tel" name="phone" id="phone" placeholder="Телефон">
+                        <p class="warning">Поле обязательное для заполнения</p>
                         <p>Дата</p>
                         <input type="date" name="date" id="date">
+                        <p class="warning">Поле обязательное для заполнения</p>
                         <p>Количество персон</p>
                         <select name="" id="">
                             <option value="1">1</option>
@@ -68,8 +70,13 @@
                             <option value="7">7</option>
                             <option value="8">8</option>
                         </select>
-                        <button class="button" type="submit">Отправить</button>
+                        <button class="button send-button" type="submit">Отправить</button>
+                        <div class="warning warning-card">
+                            Одно или несколько полей содержат ошибочные данные. Пожалуйста, проверьте их и попробуйте
+                            ещё раз.
+                        </div>
                     </form>
+
                 </div>
             </div>
         </header>

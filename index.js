@@ -1,4 +1,4 @@
-function scrollTo(to, duration = 700) {
+function scrollTo(to, duration) {
     const
         element = document.scrollingElement || document.documentElement,
         start = element.scrollTop,
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let btn = document.getElementById('up');
     btn.onclick = function (click) {
         click.preventDefault();
-        scrollTo(0, 400);
+        scrollTo(0, 500);
     }
 });
 
