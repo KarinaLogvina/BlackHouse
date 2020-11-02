@@ -13,14 +13,13 @@ i18next.init({
             "about": 'MORE',
             "adress": 'Kiseleva, 12, Minsk 220029, Belarus',
             "days": [ 
-                {
-                tuesday: 'tuesday 23:00-07:00', 
-                wednesday: 'wednesday 23:00-07:00', 
-                thusday: 'thusday 23:00-07:00', 
-                friday: 'friday 23:00-07:00', 
-                saturday: 'saturday 23:00-07:00', 
-                sunday: 'sunday 23:00-07:00'
-            }],
+                {tuesday: 'tuesday 23:00-07:00'},
+                {wednesday: 'wednesday 23:00-07:00'}, 
+                {thusday: 'thusday 23:00-07:00'},
+                {friday: 'friday 23:00-07:00'},
+                {saturday: 'saturday 23:00-07:00'}, 
+                {sunday: 'sunday 23:00-07:00'}
+            ],
             "warning": "Required field",
             "booking_title": "Table reservation",
             "phone": 'Tel.',
@@ -43,14 +42,13 @@ i18next.init({
             "about": 'УЗНАТЬ БОЛЬШЕ',
             "adress": 'Киселева, 12, Минск 220029, Беларусь',
             "days": [ 
-                {
-                tuesday: 'вторник 23:00-07:00', 
-                wednesday: 'среда 23:00-07:00', 
-                thusday: 'четверг 23:00-07:00', 
-                friday: 'пятница 23:00-07:00', 
-                saturday: 'суббота 23:00-07:00', 
-                sunday: 'воскресенье 23:00-07:00'
-            }],
+                {tuesday: 'вторник 23:00-07:00'},
+                {wednesday: 'среда 23:00-07:00'}, 
+                {thusday: 'четверг 23:00-07:00'},
+                {friday: 'пятница 23:00-07:00'},
+                {saturday: 'суббота 23:00-07:00'}, 
+                {sunday: 'воскресенье 23:00-07:00'}
+            ],
             "warning": 'Поле обязательное для заполнения',
             "booking_title": 'Заказ столика',
             "phone": 'Телефон',
@@ -83,10 +81,9 @@ function updateContent() {
     document.getElementById('data').innerHTML = i18next.t('data');
     document.getElementById('guests').innerHTML = i18next.t('guests');
     document.getElementById('send').innerHTML = i18next.t('send');
-    document.querySelectorAll('day').forEach((el) => {
-        el.innerHTML = i18next.t('days', `${el.id}`)
+    document.querySelectorAll('.day').forEach((el, index) => {
+        el.innerHTML = i18next.t(`days.${index}.${el.id}`)
     })
-
 }
 
 function changeLng(lng) {
