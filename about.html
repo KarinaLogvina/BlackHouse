@@ -51,14 +51,14 @@
                 <div class="modal">
                     <button id="close" class="close-button">&times;</button>
                     <form class="booking-form" action="" method="post" target="_blank" id="form">
-                        <p class="title">Закажите столик</p>
+                        <p class="title" id="reservation">Закажите столик</p>
                         <input type="text" placeholder="Имя" id="name">
-                        <p class="warning">Поле обязательное для заполнения</p>
+                        <p class="warning" id="warning">Поле обязательное для заполнения</p>
                         <input type="tel" name="phone" id="phone" placeholder="Телефон">
-                        <p class="warning">Поле обязательное для заполнения</p>
+                        <p class="warning" id="warning">Поле обязательное для заполнения</p>
                         <p>Дата</p>
                         <input type="date" name="date" id="date">
-                        <p class="warning">Поле обязательное для заполнения</p>
+                        <p class="warning" id="warning">Поле обязательное для заполнения</p>
                         <p>Количество персон</p>
                         <select name="" id="">
                             <option value="1">1</option>
@@ -70,11 +70,7 @@
                             <option value="7">7</option>
                             <option value="8">8</option>
                         </select>
-                        <button class="button send-button" type="submit">Отправить</button>
-                        <div class="warning warning-card">
-                            Одно или несколько полей содержат ошибочные данные. Пожалуйста, проверьте их и попробуйте
-                            ещё раз.
-                        </div>
+                        <button class="button send-button" type="submit" id="submit">Отправить</button>
                     </form>
 
                 </div>

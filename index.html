@@ -26,9 +26,12 @@
                     </div>
                     <nav>
                         <ul class="navigation nav" id="menu">
-                            <li class="navigation-item"><a href="https://blackhouseclub.by/">ГЛАВНАЯ</a></li>
-                            <li class="navigation-item"><a href="https://blackhouseclub.by/about/">О НАС</a></li>
-                            <li class="navigation-item"><a href="https://blackhouseclub.by/contact/">КОНТАКТЫ</a></li>
+                            <li class="navigation-item"><a href="https://blackhouseclub.by/" id="nav_home">ГЛАВНАЯ</a>
+                            </li>
+                            <li class="navigation-item"><a href="https://blackhouseclub.by/about/" id="nav_about">О
+                                    НАС</a></li>
+                            <li class="navigation-item"><a href="https://blackhouseclub.by/contact/"
+                                    id="nav_contacts">КОНТАКТЫ</a></li>
                             <li class="navigation-item"><a href="https://vk.com/mamastiflerabar"><img
                                         src="./src/img/vk.svg" alt="vk"></a></li>
                             <li class="navigation-item"><a href="https://www.facebook.com/MamaStiflera/"><img
@@ -36,10 +39,10 @@
                             <li class="navigation-item"><a href="https://www.instagram.com/mama.stiflera.official/"><img
                                         src="./src/img/instagram.svg" alt=""></a>
                             </li>
-                            <li class="navigation-item">
+                            <li class="navigation-item" id="ru">
                                 RU
                             </li>
-                            <li class="navigation-item">
+                            <li class="navigation-item" id="en">
                                 EN
                             </li>
                         </ul>
@@ -51,15 +54,15 @@
                 <div class="modal">
                     <button id="close" class="close-button">&times;</button>
                     <form class="booking-form" action="" method="post" target="_blank" id="form">
-                        <p class="title">Закажите столик</p>
+                        <p class="title" id="booking_title">Закажите столик</p>
                         <input type="text" placeholder="Имя" id="name">
                         <p class="warning">Поле обязательное для заполнения</p>
                         <input type="tel" name="phone" id="phone" placeholder="Телефон">
                         <p class="warning">Поле обязательное для заполнения</p>
-                        <p>Дата</p>
+                        <p id="data">Дата</p>
                         <input type="date" name="date" id="date">
                         <p class="warning">Поле обязательное для заполнения</p>
-                        <p>Количество персон</p>
+                        <p id="guests">Количество персон</p>
                         <select name="" id="">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -70,11 +73,7 @@
                             <option value="7">7</option>
                             <option value="8">8</option>
                         </select>
-                        <button class="button send-button" type="submit">Отправить</button>
-                        <div class="warning warning-card">
-                            Одно или несколько полей содержат ошибочные данные. Пожалуйста, проверьте их и попробуйте
-                            ещё раз.
-                        </div>
+                        <button class="button send-button" type="submit" id="send">Отправить</button>
                     </form>
 
                 </div>
@@ -115,7 +114,7 @@
                 </div>
                 <div class="about">
                     <h1 class="name">BLACK HOUSE CLUB</h1>
-                    <div class="description">
+                    <div class="description" id="description">
                         Black House Club открылся в Минске, чтобы стать первым концептуальным заведением в стране и
                         продемонстрировать мировые стандарты индустрии развлечений. В названии заведения уже кроется
                         интрига. С
@@ -134,15 +133,15 @@
                 <div class="information">
                     <div class="working-hours">
                         <div class="contact-name">Black House Club</div>
-                        <p class="adress">Киселева, 12, Минск 220020, Беларусь</p>
+                        <p class="adress" id="adress">Киселева, 12, Минск 220020, Беларусь</p>
                         <a href="mailto:info@blackhouseclub.by">info@blackhouseclub.by</a>
-                        <ul>
-                            <li>вторник 23.00-07.00</li>
-                            <li>среда 23.00-07.00</li>
-                            <li>четверг 23.00-07.00</li>
-                            <li>пятница 23.00-07.00</li>
-                            <li>суббота 23.00-07.00</li>
-                            <li>воскресенье 23.00-07.00</li>
+                        <ul id="days">
+                            <li class="day" id="tuesday">вторник 23.00-07.00</li>
+                            <li class="day" id="wednesday">среда 23.00-07.00</li>
+                            <li class="day" id="thusday">четверг 23.00-07.00</li>
+                            <li class="day" id="friday">пятница 23.00-07.00</li>
+                            <li class="day" id="saturday">суббота 23.00-07.00</li>
+                            <li class="day" id="sunday">воскресенье 23.00-07.00</li>
                         </ul>
                         <div class="contact-us">
                             <a href="tg://resolve?domain=endry_7979">
@@ -174,7 +173,10 @@
             <p class="footer">BLACK HOUSE CLUB 2020</p>
         </footer>
     </div>
+    <script src="https://unpkg.com/i18next/i18next.js"></script>
     <script src="./index.js"></script>
+    <script src="./translate.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
 </body>
 
 </html>

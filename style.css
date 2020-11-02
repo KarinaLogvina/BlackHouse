@@ -76,11 +76,11 @@ nav {
     border: 1px solid #fff;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
+    min-width: 167px;
     padding: 15px 20px;
     color: #fff;
     background-color: black;
 }
-
 
 .button:hover {
     color: grey;
@@ -156,6 +156,7 @@ input, select {
     font-family: "Didact Gothic",'Segoe UI', 'Helvetica Neue',sans-serif;
     margin-top: 0;
     margin-bottom: 10px;
+    min-width: 270px;
     visibility: hidden;
 }
 
@@ -200,15 +201,13 @@ input, select {
     font-family: "Didact Gothic",'Segoe UI', 'Helvetica Neue',sans-serif;
     font-weight: 400;
     text-align: center;
-    padding: 0 20px;
+    padding: 30px 20px;
 }
 
 .contact-us {
     display: flex;
     margin: 2%;
 }
-
-
 
 .working-hours {
     width: 33.3%;
