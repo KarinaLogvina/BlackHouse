@@ -1,6 +1,6 @@
-let userLang = navigator.language || navigator.userLanguage;
+let lang = window.localStorage.getItem('lang', 'ru');
 i18next.init({
-  lng: userLang,
+  lng: lang,
   debug: true,
   resources: {
     en: {
@@ -120,8 +120,10 @@ i18next.on('languageChanged', () => {
 });
 
 document.getElementById('en').onclick = () => {
+    localStorage.setItem('lang', 'en');
     changeLng('en');
 };
 document.getElementById('ru').onclick = () => {
+    localStorage.setItem('lang', 'ru');
     changeLng('ru');
 };
