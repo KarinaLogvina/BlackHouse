@@ -284,21 +284,26 @@ input, select {
 
 .fade {
     -webkit-animation-name: fade;
-    -webkit-animation-duration: 5s;
+    -webkit-animation-duration: 7s;
     animation-name: fade;
-    animation-duration: 5s;
+    animation-duration: 7s;
+    animation-timing-function: linear;
   }
 
   @-webkit-keyframes fade {
-    33.33% { opacity: 1; }
-    44.44% { opacity: 0.5; }
-    100% { opacity: 0; }
+      0% {opacity: 0;}
+      25% {opacity: 0.5;}
+      50% {opacity: 1;}
+      75% {opacity: 0.5;}
+      100% {opacity: 0;}
   }
   
   @keyframes fade {
-    33.33% { opacity: 1; }
-    44.44% { opacity: 0.5; }
-    100% { opacity: 0; }
+    0% {opacity: 0;}
+    25% {opacity: 0.5;}
+    50% {opacity: 1;}
+    75% {opacity: 0.5;}
+    100% {opacity: 0;}
   }
 
 @media screen and (max-width: 850px) {
@@ -387,7 +392,7 @@ input, select {
         transition: all 0.5s ease;
         background: white;
         content: '';
-        height: 0.4rem;
+        height: 2px;
         width: 100%;
       }
       
