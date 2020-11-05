@@ -1,3 +1,4 @@
+window.localStorage.setItem('lang', 'ru');
 let lang = window.localStorage.getItem('lang', 'ru');
 i18next.init({
   lng: lang,
@@ -43,7 +44,7 @@ i18next.init({
             "nav_contacts": "КОНТАКТЫ",
             "booking": 'ЗАБРОНИРОВАТЬ',
             "description": 'Black House Club открылся в Минске, чтобы стать первым концептуальным заведением в стране и продемонстрировать мировые стандарты индустрии развлечений. В названии заведения уже кроется интрига. С одной стороны, это «черный» — доминирующий цвет интерьера, с другой стороны — клуб, затягивает каждого гостя. Пространство этого места играет всеми красками и переносит нас в непредсказуемые для воображения места. Клуб придется по вкусу красивым и интеллигентным людям, которые понимают, что такое эксклюзивный отдых.',
-            "about": 'УЗНАТЬ БОЛЬШЕ',
+            "about": 'УЗНАЙТЕ БОЛЬШЕ',
             "adress": 'Киселева, 12, Минск 220029, Беларусь',
             "days": [ 
                 {tuesday: 'вторник 23:00-07:00'},
@@ -78,11 +79,11 @@ function updateContent() {
     document.getElementById('nav_home').innerHTML = i18next.t('nav_home');
     document.getElementById('nav_about').innerHTML = i18next.t('nav_about');
     document.getElementById('nav_contacts').innerHTML = i18next.t('nav_contacts');
-    document.getElementById('booking').innerHTML = i18next.t('booking');
+    document.getElementById('booking').children.innerHTML = i18next.t('booking');
     let description = document.getElementById('description');
     if(description) description.innerHTML = i18next.t('description');
     let about = document.getElementById('about');
-    if(about) about.innerHTML = i18next.t('about');
+    if(about) about.children.innerHTML = i18next.t('about');
     let adress = document.getElementById('adress')
     if(adress) adress.innerHTML = i18next.t('adress');
     document.querySelectorAll('.warning').forEach((el) => el.innerHTML = i18next.t('warning'));
@@ -91,7 +92,7 @@ function updateContent() {
     document.getElementById('name').placeholder = i18next.t('name');
     document.getElementById('data').innerHTML = i18next.t('data');
     document.getElementById('guests').innerHTML = i18next.t('guests');
-    document.getElementById('send').innerHTML = i18next.t('send');
+    document.getElementById('send').children.innerHTML = i18next.t('send');
     document.querySelectorAll('.day').forEach((el, index) => {
         el.innerHTML = i18next.t(`days.${index}.${el.id}`)
     });

@@ -3,19 +3,26 @@ body {
    margin: auto;
 }
 
+.hidden {
+    display: none;
+}
+
+.select {
+    color: rgb(102, 100, 100);
+    padding: 0 2px;
+}
+
 .wrapper {
     margin: 0 auto;
     color: #fff;
-    max-width: 1200px;
     width: 100%;
-    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 img {
-    max-width: 1200px;
+    overflow: hidden;
 }
 
 ul {
@@ -37,6 +44,7 @@ a {
     margin: 30px auto;
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
     width: 100%;
 }
 
@@ -71,26 +79,105 @@ nav {
     cursor: pointer;
 }
 
+.page {
+    letter-spacing: 2px;
+}
+
+.menuToggle {
+    display: flex;
+}
+
 .booking {
     margin: auto 0;
 }
 
 .button {
-    border: 1px solid #fff;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     min-width: 167px;
     padding: 15px 20px;
     color: #fff;
-    background-color: black;
-}
-
-.button:hover {
-    color: grey;
+    background: transparent;
+    outline: 2px solid gray;
     cursor: pointer;
-    border-color: grey;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
 }
 
+.big-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    min-width: 167px;
+}
+
+button {
+    margin: 20px;
+  }
+
+.btn {
+    height: 48px;
+    padding: 0;
+    border: none;
+    text-transform: uppercase;
+  }
+  .btn span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+  }
+  .btn:before,
+  .btn:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  .btn:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn:hover:before {
+    height: 100%;
+  }
+  .btn:hover:after {
+    width: 100%;
+  }
+  .btn span:before,
+  .btn span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  .btn span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn span:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn span:hover:before {
+    height: 100%;
+  }
+  .btn span:hover:after {
+    width: 100%;
+  }
+  
 .modal {
     width: 300px;
     display: none;
@@ -167,10 +254,6 @@ input, select {
     filter: blur(4px);
 }
 
-.main-wrapper {
-    max-width: 1200px;
-}
-
 .photo {
     width: 100%;
     height: 100%;
@@ -178,7 +261,8 @@ input, select {
 }
 
 .about {
-    margin: 4% 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-button {
@@ -205,11 +289,40 @@ input, select {
     font-weight: 400;
     text-align: center;
     padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slideshow {
+    position: relative;
+    height: 800px;
+}
+
+.slider-wrapper {
+    left: 0;
+    top: 0;
+    height: 47rem;
+    position: absolute;
+    width: 100%;
+}
+
+.slider-wrapper > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.about-description {
+    text-align: left;
 }
 
 .contact-us {
     display: flex;
     margin: 2%;
+}
+
+.contact-us > a {
+    padding: 0 3px;
 }
 
 .working-hours {
@@ -284,9 +397,9 @@ input, select {
 
 .fade {
     -webkit-animation-name: fade;
-    -webkit-animation-duration: 7s;
+    -webkit-animation-duration: 25s;
     animation-name: fade;
-    animation-duration: 7s;
+    animation-duration: 25s;
     animation-timing-function: linear;
   }
 

@@ -36,6 +36,24 @@ document.addEventListener('DOMContentLoaded', function () {
     up.hidden = (pageYOffset < document.documentElement.clientHeight);
 });
 
+document.getElementById('menu').addEventListener('click', (event) => {
+    if(event.target.classList.contains('page')) {
+        document.querySelectorAll('.page').forEach((e) => {
+            e.classList.remove('select');
+        })
+        event.target.classList.add('select')
+        if(event.target.id === 'nav_contacts') {
+            showInformation();
+        }
+        if(event.target.id === 'nav_home') {
+            showHome();
+        }
+        if(event.target.id === 'nav_about') {
+            showAbout();
+        }
+    }
+
+})
 
 var slideIndex = 0;
 showSlides();
@@ -54,7 +72,7 @@ function showSlides() {
     }
 
    slides[slideIndex-1].style.display = "block";
-   setTimeout(showSlides, 7000);
+   setTimeout(showSlides, 25000);
 }
 
 const about = document.getElementById('about');
@@ -78,7 +96,6 @@ if (about) {about.onclick = () => {
   
     hamburger.navToggle.addEventListener('click', function(e) { hamburger.doToggle(e); });
     hamburger.nav.addEventListener('click', function(e) { hamburger.doToggle(e); });
-  
   }());
 
   const bookingForm = document.getElementsByClassName('booking-form');
@@ -124,4 +141,24 @@ closeButton.onclick = () => {
     modalWrapper[0].style.display = 'none';
     document.getElementsByTagName('main')[0].classList.remove('filter');
     bookingForm[0].reset();
+}
+
+document.getElementById('about').onclick = () => showAbout();
+
+function showInformation() {
+    document.getElementById('main_section').classList.add('hidden');
+    document.getElementById('information_section').classList.remove('hidden');
+    document.getElementById('about_section').classList.add('hidden');
+}
+
+function showHome() {
+    document.getElementById('about_section').classList.add('hidden');
+    document.getElementById('information_section').classList.remove('hidden');
+    document.getElementById('main_section').classList.remove('hidden');
+}
+
+function showAbout() {
+    document.getElementById('main_section').classList.add('hidden');
+    document.getElementById('information_section').classList.add('hidden');
+    document.getElementById('about_section').classList.remove('hidden');
 }

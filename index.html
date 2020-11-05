@@ -20,18 +20,18 @@
                 <div class="logo">
                     <img src="./src/img/logo.png" alt="logo">
                 </div>
-                <div id="menuToggle">
+                <div id="menuToggle" class="menuToggle">
                     <div class="nav-toggle">
                         <div class="nav-toggle-bar"></div>
                     </div>
                     <nav>
                         <ul class="navigation nav" id="menu">
-                            <li class="navigation-item"><a href="https://blackhouseclub.by/" id="nav_home">ГЛАВНАЯ</a>
+                            <li class="navigation-item page select" id="nav_home">
+                                <a href="https://blackhouseclub.by/">
+                                    ГЛАВНАЯ</a>
                             </li>
-                            <li class="navigation-item"><a href="https://blackhouseclub.by/about/" id="nav_about">О
-                                    НАС</a></li>
-                            <li class="navigation-item"><a href="https://blackhouseclub.by/contact/"
-                                    id="nav_contacts">КОНТАКТЫ</a></li>
+                            <li class="navigation-item page" id="nav_about">О НАС</li>
+                            <li class="navigation-item page" id="nav_contacts">КОНТАКТЫ</li>
                             <li class="navigation-item"><a href="https://vk.com/mamastiflerabar"><img
                                         src="./src/img/vk.svg" alt="vk"></a></li>
                             <li class="navigation-item"><a href="https://www.facebook.com/MamaStiflera/"><img
@@ -49,7 +49,8 @@
                     </nav>
                 </div>
                 <div class="booking">
-                    <button id="booking" class="button btn booking-button">ЗАБРОНИРОВАТЬ</button>
+                    <button id="booking" class="button btn booking-button"><span
+                            class="big-btn">ЗАБРОНИРОВАТЬ</span></button>
                 </div>
                 <div class="modal">
                     <button id="close" class="close-button">&times;</button>
@@ -60,7 +61,7 @@
                         <input type="tel" name="phone" id="phone" placeholder="Телефон">
                         <p class="warning">Поле обязательное для заполнения</p>
                         <p id="data">Дата</p>
-                        <input type="date" name="date" id="date">
+                        <input type="date" name="calendar">
                         <p class="warning">Поле обязательное для заполнения</p>
                         <p id="guests">Количество персон</p>
                         <select name="" id="">
@@ -73,63 +74,131 @@
                             <option value="7">7</option>
                             <option value="8">8</option>
                         </select>
-                        <button class="button send-button" type="submit" id="send">Отправить</button>
+                        <button class="button send-button btn" type="submit" id="send"><span
+                                class="big-btn">Отправить</span></button>
                     </form>
 
                 </div>
             </div>
         </header>
         <main>
-            <div class="main-wrapper">
-                <div class="slideshow photos">
+            <section class="main" id="main_section">
+                <div class="main-wrapper">
+                    <div class="slideshow photos">
+                        <div class="slider-wrapper">
+                            <div class="slide fade">
+                                <img class="photo" src="./src/img/main2.jpg" style="width:100%">
+                            </div>
 
-                    <div class="slide fade">
-                        <img class="photo" src="./src/img/main2.jpg" style="width:100%">
-                    </div>
+                            <div class="slide fade">
+                                <img class="photo" src="./src/img/main3.jpg" style="width:100%">
+                            </div>
 
-                    <div class="slide fade">
-                        <img class="photo" src="./src/img/main3.jpg" style="width:100%">
+                            <div class="slide fade">
+                                <img class="photo" src="./src/img/main1.jpg" style=" width:100%">
+                            </div>
+                            <div class="slide fade">
+                                <img class="photo" src="./src/img/main4.jpg" style=" width:100%">
+                            </div>
+                            <div class="slide fade">
+                                <img class="photo" src="./src/img/main5.jpg" style=" width:100%">
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="slide fade">
-                        <img class="photo" src="./src/img/main1.jpg" style=" width:100%">
+                    <div class="contact-us center">
+                        <a href="tg://resolve?domain=endry_7979">
+                            <img src="./src/img/telegram.svg" alt="telegram">
+                        </a>
+                        <a href="viber://chat?number=+375 29 302 5987">
+                            <img src="./src/img/viber.svg" alt="viber">
+                        </a>
+                        <a href="whatsapp://send?phone=+375 29 302 5987">
+                            <img src="./src/img/whatsapp.svg" alt="watsapp">
+                        </a>
                     </div>
-                    <div class="slide fade">
-                        <img class="photo" src="./src/img/main4.jpg" style=" width:100%">
+                    <div class="about">
+                        <h1 class="name">BLACK HOUSE CLUB</h1>
+                        <div class="description" id="description">
+                            Black House Club открылся в Минске, чтобы стать первым концептуальным заведением в стране и
+                            продемонстрировать мировые стандарты индустрии развлечений. В названии заведения уже кроется
+                            интрига. С
+                            одной стороны, это «черный» — доминирующий цвет интерьера, с другой стороны — клуб,
+                            затягивает
+                            каждого
+                            гостя. Пространство этого места играет всеми красками и переносит нас в непредсказуемые для
+                            воображения
+                            места. Клуб придется по вкусу красивым и интеллигентным людям, которые понимают, что такое
+                            эксклюзивный
+                            отдых.
+                        </div>
+                        <div class="about-button">
+                            <button class="button btn" id="about"><span class="big-btn">УЗНАЙТЕ
+                                    БОЛЬШЕ</span></button>
+                        </div>
                     </div>
-                    <div class="slide fade">
-                        <img class="photo" src="./src/img/main5.jpg" style=" width:100%">
-                    </div>
-                </div>
-                <div class="contact-us center">
-                    <a href="tg://resolve?domain=endry_7979">
-                        <img src="./src/img/telegram.svg" alt="telegram">
-                    </a>
-                    <a href="viber://chat?number=+375 29 302 5987">
-                        <img src="./src/img/viber.svg" alt="viber">
-                    </a>
-                    <a href="whatsapp://send?phone=+375 29 302 5987">
-                        <img src="./src/img/whatsapp.svg" alt="watsapp">
-                    </a>
-                </div>
-                <div class="about">
-                    <h1 class="name">BLACK HOUSE CLUB</h1>
-                    <div class="description" id="description">
-                        Black House Club открылся в Минске, чтобы стать первым концептуальным заведением в стране и
-                        продемонстрировать мировые стандарты индустрии развлечений. В названии заведения уже кроется
-                        интрига. С
-                        одной стороны, это «черный» — доминирующий цвет интерьера, с другой стороны — клуб, затягивает
-                        каждого
-                        гостя. Пространство этого места играет всеми красками и переносит нас в непредсказуемые для
-                        воображения
-                        места. Клуб придется по вкусу красивым и интеллигентным людям, которые понимают, что такое
-                        эксклюзивный
-                        отдых.
-                    </div>
-                    <div class="about-button">
-                        <button id="about" class="button">УЗНАЙТЕ БОЛЬШЕ</button>
-                    </div>
-                </div>
+            </section>
+            <section class="about hidden" id="about_section">
+                <h2 class="about-title" id="about_title">О нас </h2>
+                <p class="about-description" id="about_description">Black House Club открылся в Минске, чтобы стать
+                    первым
+                    концептуальным
+                    заведением в стране и
+                    продемонстрировать мировые стандарты индустрии развлечений. В названии заведения уже кроется
+                    интрига. С
+                    одной стороны, это «черный» — доминирующий цвет интерьера, с другой стороны — клуб, затягивает
+                    каждого
+                    гостя. Пространство этого места играет всеми красками и переносит нас в непредсказуемые для
+                    воображения
+                    места. Клуб придется по вкусу красивым и интеллигентным людям, которые понимают, что такое
+                    эксклюзивный
+                    отдых.
+                </p>
+                <h2 class="about-title" id="game-of-light_title">ИГРА СВЕТА И ЗВУКА</h2>
+                <p class="about-description" id="game-of-light">
+                    Создатели Black House Club заложили максимальное количество инновационных, интерактивных
+                    новшеств и
+                    элементов, которые не встретишь в других местах. Весь бар дышит и живет вместе с музыкой и
+                    своими
+                    посетителями. Не зря одним из слоганов заведения была выбрана фраза «созданный удивлять», ведь
+                    поражает
+                    здесь буквально каждая деталь: инновационная стена из бутылок, прозрачные полы, которые держат
+                    скульптуры ручной работы. Даже роль привычных обывателю кранов с водой здесь выполняют фигуры,
+                    выполненные в форме лиц людей. В баре есть две многоуровневые VIP-зоны, зона «The Bed», четыре
+                    барные
+                    стойки, разные по размеру и исполнению. Все это многообразие позволяет получить новые
+                    впечатления от
+                    каждого последующего визита. Свой цвет меняют потолок и стены, зона баров — это создает новую,
+                    неожиданную обстановку. Запечатлейте ее с помощью iPad, которые есть на каждом столике, или
+                    посмотрите,
+                    как отдыхали гости до вас.
+                </p>
+                <h2 class="about-title" id="new-look_title">Новый взгляд на любимые вещи</h2>
+                <p class="about-description" id="new-look">
+                    Кухня Black House Club заслуживает написания отдельной книги. Она эклектична, уникальна и
+                    неповторима.
+                    Главный секрет — это использование привычных для нас и любимых ингредиентов для перевоплощения
+                    их в
+                    совершенно невероятные вкусовые сочетания! Все до мельчайших деталей, даже подача блюда, создает
+                    праздничное настроение. Все блюда в меню Black House Club можно назвать произведением
+                    кулинарного
+                    искусства! Вместе с любовью шеф-повара и всей команды заведения процесс потребления еды
+                    становится
+                    вдохновением. Каждая позиция в меню — это еще одна интрига, затягивающая нас в интерактивное
+                    взаимодействие. Любители японской кухни оценят суши в Black House Club.
+                </p>
+                <p class="about-description" id="unique">
+                    Black House Club — уникальное место со своим неповторимым стилем, атмосферой и правилами.
+                    Команда
+                    заведения готова удовлетворить все Ваши потребности и желания. Это место, куда всегда можно
+                    пригласить
+                    друзей, гостей и прийти отдохнуть самим, где проводится много мероприятий, и где ты чувствуешь
+                    себя в
+                    центре событий.
+                </p>
+                <h2 class="about-title">Black House Club — FAMOUS CLUB IN MINSK.</h2>
+                <a href="" id="up" class="up-button"><i class="up-icon"></i></a>
+            </section>
+            <section id="information_section">
                 <div class="information">
                     <div class="working-hours">
                         <div class="contact-name">Black House Club</div>
@@ -159,19 +228,19 @@
                         <div class="location">
                             <div class="map">
                                 <div style="position:relative;overflow:hidden;"><iframe
-                                        src="https://yandex.ru/map-widget/v1/-/CCQ~yXcIcB" width="560" height="400"
-                                        frameborder="1" allowfullscreen="false" style="position:relative;"></iframe>
-                                </div>
+                                        src="https://yandex.by/map-widget/v1/-/CCUAMPQVPD" width="500" height="400"
+                                        style="position:relative;"></iframe></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <a href="" id="up" class="up-button"><i class="up-icon"></i></a>
-        </main>
-        <footer>
-            <p class="footer">BLACK HOUSE CLUB 2020</p>
-        </footer>
+            </section>
+    </div>
+    <a href="" id="up" class="up-button"><i class="up-icon"></i></a>
+    </main>
+    <footer>
+        <p class="footer">BLACK HOUSE CLUB 2020</p>
+    </footer>
     </div>
     <script src="https://unpkg.com/i18next/i18next.js"></script>
     <script src="./index.js"></script>
