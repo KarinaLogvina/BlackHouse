@@ -1,6 +1,5 @@
 console.log(localStorage.lang)
 if (localStorage.lang === undefined) { 
-    console.log('fffff')
     localStoradge.lang ='ru'; 
 }
 let lang = window.localStorage.getItem('lang', 'ru');

@@ -72,7 +72,7 @@ function showSlides() {
     }
 
    slides[slideIndex-1].style.display = "block";
-   setTimeout(showSlides, 25000);
+   setTimeout(showSlides, 30000);
 }
 
 const about = document.getElementById('about');
@@ -143,9 +143,13 @@ closeButton.onclick = () => {
     bookingForm[0].reset();
 }
 
-document.getElementById('about').onclick = () => {
+document.getElementById('about').onclick = (event) => {
+    document.querySelectorAll('.page').forEach((e) => {
+        e.classList.remove('select');
+    })
+    document.getElementById('nav_about').classList.add('select')
     showAbout();
-    window.screenTop(0)
+    scrollTo(0, 500);
 }
 
 function showInformation() {
