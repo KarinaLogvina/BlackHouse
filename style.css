@@ -98,7 +98,6 @@ nav {
     padding: 15px 20px;
     color: #fff;
     background: transparent;
-    outline: 2px solid gray;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -141,11 +140,11 @@ button {
     transition: all 0.3s ease;
   }
   .btn:before {
-    height: 0%;
+    height: 50%;
     width: 2px;
   }
   .btn:after {
-    width: 0%;
+    width: 20%;
     height: 2px;
   }
   .btn:hover:before {
@@ -165,10 +164,10 @@ button {
   }
   .btn span:before {
     width: 2px;
-    height: 0%;
+    height: 50%;
   }
   .btn span:after {
-    width: 0%;
+    width: 20%;
     height: 2px;
   }
   .btn span:hover:before {
