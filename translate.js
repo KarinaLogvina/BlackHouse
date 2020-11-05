@@ -1,6 +1,5 @@
-console.log(localStorage.lang)
-if (localStorage.lang === undefined) { 
-    localStoradge.lang ='ru'; 
+if (window.localStorage.lang === undefined) { 
+    window.localStorage.setItem('lang', 'ru')
 }
 let lang = window.localStorage.getItem('lang', 'ru');
 function changeLng(lng) {
