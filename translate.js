@@ -1,8 +1,27 @@
-window.localStorage.setItem('lang', 'ru');
+console.log(localStorage.lang)
+if (localStorage.lang === undefined) { 
+    console.log('fffff')
+    localStoradge.lang ='ru'; 
+}
 let lang = window.localStorage.getItem('lang', 'ru');
+function changeLng(lng) {
+    i18next.changeLanguage(lng);
+}
+  
+i18next.on('languageChanged', () => {
+    updateContent();
+});
+
+document.getElementById('en').onclick = () => {
+    localStorage.setItem('lang', 'en');
+    changeLng('en');
+};
+document.getElementById('ru').onclick = () => {
+    localStorage.setItem('lang', 'ru');
+    changeLng('ru');
+};
 i18next.init({
   lng: lang,
-  debug: true,
   resources: {
     en: {
         translation: {
@@ -79,11 +98,11 @@ function updateContent() {
     document.getElementById('nav_home').innerHTML = i18next.t('nav_home');
     document.getElementById('nav_about').innerHTML = i18next.t('nav_about');
     document.getElementById('nav_contacts').innerHTML = i18next.t('nav_contacts');
-    document.getElementById('booking').children.innerHTML = i18next.t('booking');
+    document.getElementById('booking_button').innerHTML = i18next.t('booking');
     let description = document.getElementById('description');
     if(description) description.innerHTML = i18next.t('description');
-    let about = document.getElementById('about');
-    if(about) about.children.innerHTML = i18next.t('about');
+    let about = document.getElementById('about-button');
+    if(about) about.innerHTML = i18next.t('about');
     let adress = document.getElementById('adress')
     if(adress) adress.innerHTML = i18next.t('adress');
     document.querySelectorAll('.warning').forEach((el) => el.innerHTML = i18next.t('warning'));
@@ -92,7 +111,7 @@ function updateContent() {
     document.getElementById('name').placeholder = i18next.t('name');
     document.getElementById('data').innerHTML = i18next.t('data');
     document.getElementById('guests').innerHTML = i18next.t('guests');
-    document.getElementById('send').children.innerHTML = i18next.t('send');
+    document.getElementById('send_button').innerHTML = i18next.t('send');
     document.querySelectorAll('.day').forEach((el, index) => {
         el.innerHTML = i18next.t(`days.${index}.${el.id}`)
     });

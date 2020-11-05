@@ -216,7 +216,7 @@ input, select {
     box-sizing: border-box;
     border-radius: 6px;
     background: #000000;
-    border: 1px solid #ffffff!important;
+    border: 1px solid #ffffff;
     cursor: pointer;
     color: #ffffff;
 }

@@ -143,7 +143,10 @@ closeButton.onclick = () => {
     bookingForm[0].reset();
 }
 
-document.getElementById('about').onclick = () => showAbout();
+document.getElementById('about').onclick = () => {
+    showAbout();
+    window.screenTop(0)
+}
 
 function showInformation() {
     document.getElementById('main_section').classList.add('hidden');
