@@ -57,22 +57,22 @@ document.getElementById('menu').addEventListener('click', (event) => {
 
 var slideIndex = 0;
 showSlides();
-  
+
 function showSlides() {
     let i;
     const slides = document.getElementsByClassName("slide");
-    if(!slides || !slides.length) return
+    if (!slides || !slides.length) return
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     slideIndex++;
 
-    if (slideIndex > slides.length) { 
-      slideIndex = 1;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
     }
 
-   slides[slideIndex-1].style.display = "block";
-   setTimeout(showSlides, 30000);
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 30000);
 }
 
 const about = document.getElementById('about');
@@ -86,44 +86,64 @@ if (about) {about.onclick = () => {
     var hamburger = {
       navToggle: document.querySelector('.nav-toggle'),
       nav: document.querySelector('.navigation'),
-  
-      doToggle: function(e) {
-        e.preventDefault();
-        this.navToggle.classList.toggle('expanded');
-        this.nav.classList.toggle('expanded');
-      }
+
+        doToggle: function (e) {
+            e.preventDefault();
+            this.navToggle.classList.toggle('expanded');
+            this.nav.classList.toggle('expanded');
+        }
     };
-  
-    hamburger.navToggle.addEventListener('click', function(e) { hamburger.doToggle(e); });
-    hamburger.nav.addEventListener('click', function(e) { hamburger.doToggle(e); });
-  }());
 
-  const bookingForm = document.getElementsByClassName('booking-form');
-  const subminButton = document.getElementsByClassName('send-button');
-  const warning = document.getElementsByClassName('warning');
-  const name = document.getElementById('name');
-  const date = document.getElementById('date');
-  const phone = document.getElementById('phone');
+    hamburger.navToggle.addEventListener('click', function (e) {
+        hamburger.doToggle(e);
+    });
+    hamburger.nav.addEventListener('click', function (e) {
+        hamburger.doToggle(e);
+    });
+}());
 
-  (function order() {
+const bookingForm = document.getElementsByClassName('booking-form');
+const subminButton = document.getElementsByClassName('send-button');
+const warning = document.getElementsByClassName('warning');
+const name = document.getElementById('name');
+const date = document.getElementById('date');
+const phone = document.getElementById('phone');
+const guests = document.getElementById('guests-select');
+
+(function order() {
     bookingForm[0].addEventListener('submit', (e) => {
-        if(name.value.length <= 0) {
-            warning[0].style.visibility= 'visible';
-            e.preventDefault();
+        e.preventDefault();
+        let validateionPassed = true;
+        if (name.value.length <= 0) {
+            warning[0].style.visibility = 'visible';
+            validateionPassed = false;
         } else {
-            warning[0].style.visibility= 'hidden';
+            warning[0].style.visibility = 'hidden';
         }
-        if(phone.value.length <= 0) {
+        if (phone.value.length <= 0) {
             warning[1].style.visibility = 'visible';
-            e.preventDefault();
+            validateionPassed = false;
         } else {
-            warning[1].style.visibility= 'hidden';
+            warning[1].style.visibility = 'hidden';
         }
-        if(date.value.length <= 0) {
+        if (date.value.length <= 0) {
             warning[2].style.visibility = 'visible';
-            e.preventDefault();
+            validateionPassed = false;
         } else {
-            warning[2].style.visibility= 'hidden';
+            warning[2].style.visibility = 'hidden';
+        }
+
+        if (validateionPassed) {
+            const dateValue = (new Date(date.value)).toLocaleDateString();
+            const messageText =
+                `*Новый запрос на бронирование*
+
+Имя *${name.value}*
+Телефон: *${phone.value}*
+Дата: *${dateValue}*
+Количество человек: *${guests.value}*`;
+
+            fetch(encodeURI(`https://api.telegram.org/bot1471193927:AAELUdi7U26mdI2B2vg3gdTdbPqgb1Yuab8/sendMessage?chat_id=-1001438576248&text=${messageText}&parse_mode=MarkdownV2`)).then(closeModal)
         }
     })
 }());
@@ -137,10 +157,14 @@ booking.onclick = () => {
     document.getElementsByTagName('main')[0].classList.add('filter');
 }
 
-closeButton.onclick = () => {
+function closeModal() {
     modalWrapper[0].style.display = 'none';
     document.getElementsByTagName('main')[0].classList.remove('filter');
     bookingForm[0].reset();
+}
+
+closeButton.onclick = () => {
+    closeModal();
 }
 
 document.getElementById('about').onclick = (event) => {

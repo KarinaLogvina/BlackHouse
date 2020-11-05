@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Poppins:ital,wght@0,500;0,700;1,400&display=swap"
-        rel="stylesheet">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Poppins%3A700%2C600%2C500%2C400%7C&#038;ver=1.0'
+          type='text/css' media='all'/>
     <link rel="shortcut icon" href="./src/img/favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Black House Club</title>
@@ -60,10 +59,12 @@
                         <input type="tel" name="phone" id="phone" placeholder="Телефон">
                         <p class="warning">Поле обязательное для заполнения</p>
                         <p id="data">Дата</p>
-                        <input type="date" name="calendar">
+                        <input id="date" type="date" name="calendar"
+                               placeholder="dd-mm-yyyy" value=""
+                               min="2020-01-01" max="2030-12-31">
                         <p class="warning">Поле обязательное для заполнения</p>
                         <p id="guests">Количество персон</p>
-                        <select name="" class="guests">
+                        <select id="guests-select" name="" class="guests">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -80,6 +81,7 @@
                 </div>
             </div>
         </header>
+
         <main>
             <section class="main" id="main_section">
                 <div class="main-wrapper">
@@ -135,6 +137,7 @@
                                     БОЛЬШЕ</span></button>
                         </div>
                     </div>
+                </div>
             </section>
             <section class="about hidden" id="about_section">
                 <h2 class="about-title" id="about_title">О нас </h2>
@@ -225,25 +228,30 @@
                     <div>
                         <div class="location">
                             <div class="map">
-                                <div style="position:relative;overflow:hidden;"><iframe
-                                        src="https://yandex.by/map-widget/v1/-/CCUAMPQVPD" width="500" height="400"
-                                        style="position:relative;"></iframe></div>
+                                <div style="position:relative;overflow:hidden;">
+                                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A01d4804678201d9f971be2f95e8d711904cb4df1f8291798a1f495745c28f478&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+        </main>
     </div>
-    <a href="" id="up" class="up-button"><i class="up-icon"></i></a>
+    <a href="" id="up" class="up-button">
+        <i class="up-icon"></i>
+    </a>
     </main>
     <footer>
         <p class="footer">BLACK HOUSE CLUB 2020</p>
     </footer>
     </div>
+
     <script src="https://unpkg.com/i18next/i18next.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
     <script src="./index.js"></script>
     <script src="./translate.js"></script>
-    <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+
 </body>
 
 </html>

@@ -1,6 +1,28 @@
+@font-face {
+    font-family: "Didact Gothic";
+    src: url("./src/fonts/DidactGothic.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: "icomoon";
+    src: url("./src/fonts/icomoon.woff") format("woff")
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 body {
     background-color: black;
-   margin: auto;
+    margin: auto;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .hidden {
@@ -184,7 +206,7 @@ button {
   .btn span:hover:after {
     width: 100%;
   }
-  
+
 .modal {
     width: 300px;
     display: none;
@@ -375,8 +397,9 @@ input, select {
 
 .up-icon::before {
     color: #fff;
-    content: "^";
-    font-family: 'Helvetica Neue',sans-serif;
+    content: "\e734";
+    font-family: "icomoon", serif;
+    font-style: initial;
     font-weight: 400;
 }
 
@@ -417,7 +440,7 @@ input, select {
       88% {opacity: 0.5;}
       100% {opacity: 0;}
   }
-  
+
   @keyframes fade {
     0% {opacity: 0;}
     11% {opacity: 0.5;}
@@ -435,7 +458,7 @@ input, select {
         visibility: visible;
         opacity: 1;
     }
-    
+
     .header-wrapper {
         flex-direction: column;
         align-items: center;
@@ -470,9 +493,9 @@ input, select {
         z-index: 1;
         margin: 0 0 0 0;
       }
-      
+
       .navigation.expanded { left: 0; }
-      
+
       .navigation ul {
         position: absolute;
         top: 50%;
@@ -496,9 +519,9 @@ input, select {
         width: 3rem;
         z-index: 2;
       }
-      
+
       .nav-toggle:hover { opacity: 0.8; }
-      
+
       .nav-toggle .nav-toggle-bar,  .nav-toggle .nav-toggle-bar::after,  .nav-toggle .nav-toggle-bar::before {
         position: absolute;
         top: 50%;
@@ -515,26 +538,26 @@ input, select {
         height: 2px;
         width: 100%;
       }
-      
+
       .nav-toggle .nav-toggle-bar { margin-top: 0; }
-      
+
       .nav-toggle .nav-toggle-bar::after { margin-top: 0.8rem; }
-      
+
       .nav-toggle .nav-toggle-bar::before { margin-top: -0.8rem; }
-      
+
       .nav-toggle.expanded .nav-toggle-bar { background: transparent; }
-      
+
       .nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
         background: white;
         margin-top: 0;
       }
-      
+
       .nav-toggle.expanded .nav-toggle-bar::after {
         -ms-transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
       }
-      
+
       .nav-toggle.expanded .nav-toggle-bar::before {
         -ms-transform: rotate(-45deg);
         -webkit-transform: rotate(-45deg);
