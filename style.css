@@ -484,11 +484,11 @@ input, select {
         cursor: pointer;
         font-size: 2rem;
         height: 100vh;
-        left: -105%;
+        left: -111%;
         padding: 6rem 2rem 2rem 2rem;
         position: fixed;
         top: 0;
-        width: 100%;
+        width: 90%;
         flex-direction: column;
         z-index: 1;
         margin: 0 0 0 0;
@@ -563,6 +563,10 @@ input, select {
         -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
       }
+
+    .logo {
+        padding: 0;
+    }
 
     .modal {
         width: 105%;
