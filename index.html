@@ -30,12 +30,20 @@
                             </li>
                             <li class="navigation-item page" id="nav_about">О НАС</li>
                             <li class="navigation-item page" id="nav_contacts">КОНТАКТЫ</li>
-                            <li class="navigation-item"><a href="https://vk.com/mamastiflerabar"><img
-                                        src="./src/img/vk.svg" alt="vk"></a></li>
-                            <li class="navigation-item"><a href="https://www.facebook.com/MamaStiflera/"><img
-                                        src="./src/img/facebook.svg" alt=""></a></li>
-                            <li class="navigation-item"><a href="https://www.instagram.com/mama.stiflera.official/"><img
-                                        src="./src/img/instagram.svg" alt=""></a>
+                            <li class="navigation-item">
+                                <a href="https://vk.com/mamastiflerabar">
+                                    <img src="./src/img/vk.svg" alt="vk">
+                                </a>
+                            </li>
+                            <li class="navigation-item">
+                                <a href="https://www.facebook.com/MamaStiflera/">
+                                    <img src="./src/img/facebook.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="navigation-item">
+                                <a href="https://www.instagram.com/mama.stiflera.official/">
+                                    <img src="./src/img/instagram.svg" alt="">
+                                </a>
                             </li>
                             <li class="navigation-item" id="ru">
                                 RU
@@ -47,22 +55,27 @@
                     </nav>
                 </div>
                 <div class="booking">
-                    <button id="booking" class="button btn booking-button"><span class="big-btn"
-                            id="booking_button">ЗАБРОНИРОВАТЬ</span></button>
+                    <button id="booking" class="button btn booking-button">
+                        <span class="big-btn" id="booking_button">ЗАБРОНИРОВАТЬ</span>
+                    </button>
                 </div>
                 <div class="modal">
                     <button id="close" class="close-button">&times;</button>
                     <form class="booking-form" action="" method="post" target="_blank" id="form">
                         <p class="title" id="booking_title">Закажите столик</p>
+
                         <input type="text" placeholder="Имя" id="name">
                         <p class="warning">Поле обязательное для заполнения</p>
+
                         <input type="tel" name="phone" id="phone" placeholder="Телефон">
                         <p class="warning">Поле обязательное для заполнения</p>
+
                         <p id="data">Дата</p>
                         <input id="date" type="date" name="calendar"
                                placeholder="dd-mm-yyyy" value=""
                                min="2020-01-01" max="2030-12-31">
                         <p class="warning">Поле обязательное для заполнения</p>
+
                         <p id="guests">Количество персон</p>
                         <select id="guests-select" name="" class="guests">
                             <option value="1">1</option>
@@ -74,8 +87,10 @@
                             <option value="7">7</option>
                             <option value="8">8</option>
                         </select>
-                        <button class="button send-button btn" type="submit" id="send"><span class="big-btn"
-                                id="send_button">Отправить</span></button>
+
+                        <button class="button send-button btn" type="submit" id="send">
+                            <span class="big-btn" id="send_button">Отправить</span>
+                        </button>
                     </form>
 
                 </div>
